@@ -182,17 +182,17 @@
 }
   
 .main_heading span {
-    background: #BB377D; /* fallback for old browsers */
+    background: #BB377D; 
     background: -webkit-linear-gradient(
       to right,
       #ee9ca7,
       #ffdde1
-    ); /* Chrome 10-25, Safari 5.1-6 */
+    ); 
     background: linear-gradient(
       to right,
       #ee9ca7,
       #ffdde1
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    ); 
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -214,7 +214,7 @@
     }
 }
 
-/* About Section */
+
 .second {
     background-color: #131313;
     padding: 10rem 0;
@@ -253,17 +253,17 @@
   
 .second_content h2 {
     font-size: 4rem;
-    background: #ff8177; /* fallback for old browsers */
+    background: #ff8177; 
     background: -webkit-linear-gradient(
       to right,
       #C9FFBF,
       #FFAFBD
-    ); /* Chrome 10-25, Safari 5.1-6 */
+    ); 
     background: linear-gradient(
       to right,
       #FFAFBD,
       #C9FFBF
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    ); 
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -332,7 +332,6 @@
     flex-direction: column;
     justify-content: center;
     color: #fff;
-    /* background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%); */
 }
   
 .fa-layer-group, .fa-users {
@@ -493,7 +492,7 @@
 }
 
 .footer{
-  padding: 40px 0;
+  padding: 20px 0;
   background-color: black;
   color: white;
 }
@@ -505,7 +504,7 @@
 
 .footer .social a{
   font-size: 20px;
-  padding-right: 3rem;
+  padding-right: 1rem;
   color: white;
   text-decoration: none;
   justify-content: space-between;
@@ -519,8 +518,30 @@
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 0;
+  text-align: center;
 }
 
 footer ul a{
-  c
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.footer ul li{
+  display: inline;
+  padding: 0 10px;
+}
+
+.footer .copyright{
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.footer p{
+  bottom: 0;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
 }
