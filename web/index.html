@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rural Health Assistant</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 </head>
 <body>
     <nav class="navbar">
@@ -24,6 +25,9 @@
                     <a href="#about_uspart" class="nav_links" id="about_us">ABOUT US</a>
                 </li>
             </ul>
+            <p class="copyright">
+                RuralHealthAssistant @ 2024
+            </p>
         </div>
     </nav>
 
@@ -97,6 +101,66 @@
         </div>
     </div>
 
+    <script>
+                const requestBody = {
+                    "input_data": {
+                    "columns": [
+                        "Age",
+                        "Sex",
+                        "ChestPainType",
+                        "Cholesterol",
+                        "FastingBS",
+                        "RestingECG",
+                        "Oldpeak"
+                    ],
+                    "index": ['baba'],
+                    "data": [[40, 'M', 'ATA', 289, 0, 'Normal', 0]]
+                    }
+                } ;
+
+        const requestHeaders = new Headers({"Content-Type" : "application/json"});
+        const apiKey = "33FcKtTiGc0xz6CW3Silqd8uKrMy3bZR";
+        if (!apiKey)
+        {
+        throw new Exception("A key should be provided to invoke the endpoint");
+        }
+        requestHeaders.append("Authorization", "Bearer " + apiKey)
+        requestHeaders.append("azureml-model-deployment", "heartt63-1");
+
+        const url = "https://heart.azure-api.net/score";
+
+        fetch(url, {
+        method: "POST",
+        body: JSON.stringify(requestBody),
+        headers: requestHeaders
+        })
+        .then((response) => {
+        if (response.ok) {
+        return response.json();
+        } else {
+        console.debug(...response.headers);
+        console.debug(response.body)
+        throw new Error("Request failed with status code" + response.status);
+        }
+        })
+        .then((json) => console.log(json))
+        .catch((error) => {
+        console.error(error)
+        });
+    </script>
+
+    <section class="footer">
+        <div class="social">
+            <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>
+        </div>
+        <ul class="contact">
+            <li>Burgas, Bulgaria</li>
+            <li>RHAssistant@gmail.com</li>
+            <li>089764382</li>
+        </ul>
+    </section>
 
     <script src="./app.js"></script>
 </body>
